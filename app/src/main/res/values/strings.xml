@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">TruemedInterview</string>
+
+    <string name="permissionDenied">Permission Denied\n</string>
+    <string name="permissionRejectedMsg"><![CDATA["If you reject permission,you can not use this service\n\nPlease turn on permissions at [Setting] > Permission "]]></string>
+    <string name="permissionToDownloadFile">We need permission to download file in your device.</string>
+    <string name="permissionToCallMsg">We need permission to make call from your device.</string>
+    <string name="PleaseWait">Please wait..</string>
+    <string name="invalidURL">Invalid URL</string>
+    <string name="strOK">OK</string>
+    <string name="strFetchArticles">Fetch Articles</string>
+    <string name="clicktoFetchArticles">Click on button to Fetch Articles.</string>
+    <string name="clicktoFetchArticlesaAgain">Click on button to Fetch Articles again.</string>
+    <string name="articlesFetchCDmsg">"Articles will be fetched in "</string>
+    <string name="readMore">Read more</string>
+    <string name="strPermissionToDownloadImage">We need permission to download and share the image.</string>
+    <string name="CheckInternetConnection">Please check your internet connection.</string>
+    <string name="strNoDatafound">No data found</string>
+    <string name="strPleasewait">Please wait...</string>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rel_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".acitivites.SplashScreen"
+    android:background="@drawable/gradiant_splash_screen">
+
+    <RelativeLayout
+        android:id="@+id/rel_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_2sdp"
+        android:layout_centerInParent="true"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/imgView_Main_bankLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginHorizontal="@dimen/_50sdp"
+            android:src="@drawable/truemeds_image" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
