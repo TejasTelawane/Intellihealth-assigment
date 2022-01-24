@@ -17,6 +17,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.interview.truemedinterview.R;
 import com.interview.truemedinterview.acitivites.ArticleDetailScreen;
+import com.interview.truemedinterview.databinding.ArticleItemRowBinding;
 import com.interview.truemedinterview.models.ArticlesModel;
 import com.interview.truemedinterview.utils.CommonUtils;
 import com.interview.truemedinterview.utils.Connectivity;
@@ -41,43 +42,28 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        CardView cv_menuItem;
-        TextView tv_header,tv_author,tv_desc;
-        ShapeableImageView img_article,img_backarrow,img_share;
-        MaterialButton btn_readmore;
-
-        public MyViewHolder(View view, int ViewType) {
-            super(view);
-            cv_menuItem = (CardView) view.findViewById(R.id.cv_menuItem);
-            img_article = (ShapeableImageView) view.findViewById(R.id.img_article);
-            img_backarrow = (ShapeableImageView) view.findViewById(R.id.img_backarrow);
-            img_share = (ShapeableImageView) view.findViewById(R.id.img_share);
-            tv_header = (TextView) view.findViewById(R.id.tv_header);
-            tv_author = (TextView) view.findViewById(R.id.tv_author);
-            tv_desc = (TextView) view.findViewById(R.id.tv_desc);
-            btn_readmore = (MaterialButton) view.findViewById(R.id.btn_readmore);
+        ArticleItemRowBinding binding;//Name of the test_list_item.xml in camel case + "Binding"
+        public MyViewHolder(ArticleItemRowBinding b) {
+            super(b.getRoot());
+            binding = b;
         }
-
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = null;
-        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.article_item_row, parent, false);
-        MyViewHolder vhUser = new MyViewHolder(view, viewType);
-
-        return vhUser;
+        return new MyViewHolder(ArticleItemRowBinding.inflate(LayoutInflater.from(parent.getContext()),
+                parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        ImageUtil.DisplayImage(mActivity,articleArrayList.get(position).getUrl(),holder.img_article,R.drawable.truemeds_image);
-        StringUtils.setTextToTextView(holder.tv_header,articleArrayList.get(position).getName());
-        StringUtils.setTextToTextView(holder.tv_author,"- "+articleArrayList.get(position).getAuthor());
-        StringUtils.setTextToTextView(holder.tv_desc,articleArrayList.get(position).getDescription());
-        holder.btn_readmore.setOnClickListener(view -> {
+        ImageUtil.DisplayImage(mActivity,articleArrayList.get(position).getImage(),holder.binding.imgArticle,R.drawable.truemeds_image);
+        StringUtils.setTextToTextView(holder.binding.tvHeader,articleArrayList.get(position).getName());
+        StringUtils.setTextToTextView(holder.binding.tvAuthor,"- "+articleArrayList.get(position).getAuthor());
+        StringUtils.setTextToTextView(holder.binding.tvDesc,articleArrayList.get(position).getDescription());
+        holder.binding.btnReadmore.setOnClickListener(view -> {
 
             Intent intent = new Intent(mActivity, ArticleDetailScreen.class);
             intent.putExtra("position",position);
@@ -85,19 +71,19 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
             mActivity.startActivity(intent);
         });
 
-        holder.img_share.setOnClickListener(view -> {
+        holder.binding.imgShare.setOnClickListener(view -> {
             if (!StringUtils.isNull(articleArrayList.get(position).getImage())) {
-
+                // Share Details on WhatsApp with Image
                 PermissionUtils.AsKPermissionToDownloadAndShareImage(mActivity, () -> {
                     if (Connectivity.isConnected(mActivity)){
                         final String appPackageName = mActivity.getPackageName(); // getPackageName() from Context or Activity object
                         String msgtoSend = "Hey check out this article by  \n" + articleArrayList.get(position).getAuthor().toUpperCase() + " \n"+articleArrayList.get(position).getName()+"\nDownload the App now" + "https://play.google.com/store/apps/details?id=" + appPackageName;
-                        CommonUtils.DownloadImageUsingGlide(mActivity,articleArrayList.get(position).getUrl(),msgtoSend);
+                        CommonUtils.DownloadImageUsingGlide(mActivity,articleArrayList.get(position).getImage(),msgtoSend);
                     }
                 });
 
             } else {
-
+                // Share Details on WhatsApp without image
                 final String appPackageName = mActivity.getPackageName(); // getPackageName() from Context or Activity object
                 String msgtoSend = "Hey check out this article by  \n" + articleArrayList.get(position).getAuthor().toUpperCase() + " \n"+articleArrayList.get(position).getName()+"\nDownload the App now" + "https://play.google.com/store/apps/details?id=" + appPackageName;
 

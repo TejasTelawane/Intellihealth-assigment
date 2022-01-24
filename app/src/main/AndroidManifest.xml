@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TruemedInterview"
         android:usesCleartextTraffic="true">
-        <activity android:name=".acitivites.ArticleDetailScreen"></activity>
+        <activity android:name=".acitivites.ArticleDetailScreen"
+            android:theme="@style/Theme.TruemedInterview.NoActionBar"></activity>
         <activity
             android:name=".acitivites.MainActivity"
             android:theme="@style/Theme.TruemedInterview.NoActionBar" />

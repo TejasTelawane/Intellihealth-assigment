@@ -76,7 +76,7 @@ public class ArticleDetailScreen extends AppCompatActivity {
                     if (Connectivity.isConnected(mActivity)){
                         final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
                         String msgtoSend = "Hey check out this article by  \n" + singleArticleModel.getAuthor().toUpperCase() + " \n"+singleArticleModel.getName()+"\nDownload the App now" + "https://play.google.com/store/apps/details?id=" + appPackageName;
-                        CommonUtils.DownloadImageUsingGlide(mActivity,singleArticleModel.getUrl(),msgtoSend);
+                        CommonUtils.DownloadImageUsingGlide(mActivity,singleArticleModel.getImage(),msgtoSend);
                     }
                 });
 
