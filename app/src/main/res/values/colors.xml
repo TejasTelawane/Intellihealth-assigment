@@ -2,8 +2,8 @@
 <resources>
     <color name="primary">#44A348</color>
     <color name="primary_dark">#24369E</color>
-    <color name="truemed_blue">#24369E</color>
-    <color name="truemed_green">#44A348</color>
+    <color name="project_blue">#1733DA</color>
+    <color name="project_green">#44A348</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>

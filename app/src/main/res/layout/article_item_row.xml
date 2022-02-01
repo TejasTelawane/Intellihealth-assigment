@@ -27,7 +27,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/truemeds_image"/>
+                    android:src="@drawable/ic_app_logo"/>
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/img_share"
@@ -37,7 +37,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_margin="@dimen/_10sdp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/share"/>
+                    android:src="@drawable/share_icon"/>
 
             </RelativeLayout>
 
@@ -76,7 +76,7 @@
                     android:layout_alignParentEnd="true"
                     android:textSize="@dimen/_12sdp"
                     android:textStyle="bold"
-                    android:text="Diarrhoea" />
+                    android:text="" />
             </RelativeLayout>
 
 

@@ -8,40 +8,25 @@
     android:background="@color/lightgrey"
     android:orientation="vertical">
 
-    <RelativeLayout
-        android:id="@+id/rel_countdown"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_5sdp"
-        android:background="@drawable/rounded_background_empty">
+        android:theme="@style/Theme.InterviewProject">
 
-        <TextView
-            android:id="@+id/tv_Countdowntext"
-            android:layout_toLeftOf="@+id/btn_fetchData"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/actionBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/clicktoFetchArticles"
-            android:maxLines="2"
-            android:textColor="@color/black"
-            android:layout_marginLeft="@dimen/_5sdp"
-            android:textStyle="bold"
-            android:textSize="@dimen/_12sdp"
-            android:layout_centerVertical="true"/>
+            android:layout_height="?attr/actionBarSize"
+            android:theme="@style/ToolbarTheme"
+            app:title="Home"
+            app:titleTextColor="@color/white" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_fetchData"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/strFetchArticles"
-            android:layout_alignParentRight="true"
-            android:textSize="@dimen/_10sdp"
-            android:layout_margin="@dimen/_5sdp"/>
-
-    </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycle_articles"
-        android:layout_below="@+id/rel_countdown"
+        android:layout_below="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/article_item_row"

@@ -73,4 +73,4 @@
 
 #-----------------------------------Rules for Models to prevent from obfuscation --------------------------------------------
 
--keep public class com.interview.truemedinterview.models.** {*;}
+-keep public class com.interview.healthcare.models.** {*;}

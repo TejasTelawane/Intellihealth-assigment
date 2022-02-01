@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.interview.truemedinterview"
+        applicationId "com.interview.healthcare"
         minSdkVersion 23
         targetSdkVersion 31
         versionCode 1
@@ -49,12 +49,17 @@ dependencies {
 
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0' // For Network Calls
-    implementation 'com.squareup.retrofit2:converter-gson:2.5.0' // For network Calls
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1' // For network Calls
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0' // For json object conversion
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1' // For logging network calls
     implementation 'com.squareup.retrofit2:converter-scalars:2.5.0' // For network Calls
-    // Retrofit
+
+    //Room DB
+    def room_version = "2.3.0"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
 
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0' // For MVVM
+
     implementation 'com.intuit.sdp:sdp-android:1.0.6' // For Screen management
     implementation 'com.google.code.gson:gson:2.8.6' // For Model Conversions from string to Model and Vice Versa
     implementation 'gun0912.ted:tedpermission:2.2.3' // For handling permissions in easy way

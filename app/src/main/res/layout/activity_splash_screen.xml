@@ -21,7 +21,16 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_100sdp"
             android:layout_marginHorizontal="@dimen/_50sdp"
-            android:src="@drawable/truemeds_image" />
+            android:src="@drawable/ic_app_logo" />
+        <TextView
+            android:layout_below="@+id/imgView_Main_bankLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/HealthCare"
+            android:textStyle="bold"
+            android:textSize="@dimen/_30sdp"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"/>
 
     </RelativeLayout>
 

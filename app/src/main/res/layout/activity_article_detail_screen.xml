@@ -32,7 +32,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/truemeds_image"/>
+                        android:src="@drawable/ic_app_logo"/>
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/img_share"
@@ -70,7 +70,7 @@
                         android:layout_alignParentEnd="true"
                         android:textSize="@dimen/_12sdp"
                         android:textStyle="bold"
-                        android:text="Diarrhoea" />
+                        android:text="" />
 
                     <TextView
                         android:id="@+id/tv_author"
